@@ -14,4 +14,3 @@ data_subset <- data[data$Date >= "2007-02-01" & data$Date <= "2007-02-02",]
 
 ## Draw Histogram
 hist(as.numeric(data_subset$Global_active_power), col='red', breaks = 15, main = "Global Active Power", xlab="Global Active Power (kilowats)", ylim=c(0,1200), las=2)
-
