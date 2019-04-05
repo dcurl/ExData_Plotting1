@@ -12,5 +12,8 @@ data$Global_active_power = as.numeric(data$Global_active_power)/500
 ## Subset Dates to 2007-02-01 and 2007-02-02 (yyyy-mm-dd)
 data_subset <- data[data$Date >= "2007-02-01" & data$Date <= "2007-02-02",]
 
+## Format plot to be square in shape
+par(pty="s")
+
 ## Draw Histogram
 hist(as.numeric(data_subset$Global_active_power), col='red', breaks = 15, main = "Global Active Power", xlab="Global Active Power (kilowats)", ylim=c(0,1200), las=2)

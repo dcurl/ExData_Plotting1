@@ -22,6 +22,9 @@ data$Date_Time <- ymd_hms(paste(data$Date, data$Time))
 ## Subset Dates to 2007-02-01 and 2007-02-02 (yyyy-mm-dd)
 data_subset <- data[data$Date >= "2007-02-01" & data$Date <= "2007-02-02",]
 
+## Format plot to be square in shape
+par(pty="s")
+
 # Designate x and y coordinates and plot graph
 x <- data_subset$Date_Time
 y <- data_subset$Global_active_power
