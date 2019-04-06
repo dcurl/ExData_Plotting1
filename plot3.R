@@ -30,6 +30,9 @@ y3 <- as.numeric(data_subset$Sub_metering_3)
 ## Format plot to be square in shape
 par(pty="s")
 
+## Save to file
+png("plot3.png")
+
 ## Plot Sub Metering 1
 plot(y ~ x, type="n", yaxt="n", xlab="", ylab="Energy sub metering")
 lines(y ~ x)
@@ -45,3 +48,6 @@ lines(y3 ~ x, col = 'blue')
 
 ## Add Legend
 legend("topright", legend = c("Sub metering 1", "Sub metering 2", "Sub metering 3"), lty = c(1, 1,1), col = c("black", "red", "blue"))
+
+## Finish file
+dev.off()

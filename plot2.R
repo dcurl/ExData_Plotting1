@@ -25,9 +25,15 @@ data_subset <- data[data$Date >= "2007-02-01" & data$Date <= "2007-02-02",]
 ## Format plot to be square in shape
 par(pty="s")
 
+## Save to file
+png("plot2.png")
+
 # Designate x and y coordinates and plot graph
 x <- data_subset$Date_Time
 y <- data_subset$Global_active_power
 
 plot(y ~ x, type="n", xlab = "", ylab = "Global Active Power (kilowats)")
 lines(y ~ x)
+
+## Finish file
+dev.off()

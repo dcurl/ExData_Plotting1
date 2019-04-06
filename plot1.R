@@ -15,5 +15,11 @@ data_subset <- data[data$Date >= "2007-02-01" & data$Date <= "2007-02-02",]
 ## Format plot to be square in shape
 par(pty="s")
 
+## Save to file
+png("plot1.png")
+
 ## Draw Histogram
 hist(as.numeric(data_subset$Global_active_power), col='red', breaks = 15, main = "Global Active Power", xlab="Global Active Power (kilowats)", ylim=c(0,1200), las=2)
+
+## Finish file
+dev.off()
